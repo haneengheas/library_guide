@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/widgets/flatbuton.dart';
 import 'package:library_guide/widgets/input_field.dart';
+import 'package:library_guide/widgets/logo.dart';
 import 'package:library_guide/widgets/textbuton.dart';
 
 class LogInScreen extends StatefulWidget {
@@ -20,7 +21,11 @@ class _LogInScreenState extends State<LogInScreen> {
         child: ListView(
           children: [
             SizedBox(
-              height: sizeFromHeight(context, 7),
+              height: sizeFromHeight(context, 15),
+            ),
+            Logo(),
+            SizedBox(
+              height: sizeFromHeight(context, 15),
             ),
             Center(
                 child: Text(
