@@ -12,6 +12,8 @@ const TextStyle s1 = TextStyle(
     fontSize: 32, fontWeight: FontWeight.w600, color: gray, height: .2);
 const TextStyle s2 = TextStyle(
     fontSize: 18, fontWeight: FontWeight.w400, color: clear_gray, height: 1.5);
+const TextStyle s3 = TextStyle(
+    fontSize: 22, fontWeight: FontWeight.bold, color: white, height: 1.5);
 
 double sizeFromHeight(BuildContext context, double fraction,
     {bool hasAppBar = true}) {

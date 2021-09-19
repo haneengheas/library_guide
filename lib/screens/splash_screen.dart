@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
-import 'package:library_guide/screens/sign_in_screen.dart';
+import 'package:library_guide/screens/log_in_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => SignInScreen()));
+          context, MaterialPageRoute(builder: (context) => LogInScreen()));
     });
     super.initState();
   }
@@ -26,14 +26,14 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Container(
-          width: sizeFromWidth(context, 3),
-          height: sizeFromHeight(context, 3),
+          width: sizeFromWidth(context, 2),
+          height: sizeFromHeight(context, 2),
           decoration: BoxDecoration(
-              color: gray,
+              //color: gray,
               shape: BoxShape.circle,
               image: DecorationImage(
                 image: AssetImage(
-                  'assets/bag.png',
+                  'assets/logo.png',
                 ),
               )),
         ),
