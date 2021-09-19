@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
-import 'package:library_guide/screens/display_books_screen.dart';
+import 'package:library_guide/screens/admin/display_books_screen.dart';
 
 class AddImage extends StatelessWidget {
-String text;
+ final String text;
 AddImage(this.text);
   @override
   Widget build(BuildContext context) {
     return  GestureDetector(
       onTap: (){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> DisplayBooksSkreen() ));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> DisplayBooksScreen() ));
       },
 
       child: Container(

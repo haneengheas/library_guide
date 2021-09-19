@@ -1,22 +1,16 @@
-
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
-import 'package:library_guide/screens/add_book_scren.dart';
 class Buton extends StatelessWidget {
-
-  String text;
-  Buton(this.text);
-
+ final String text;
+ final Function onTap;
+  Buton(this.text,{required this.onTap});
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: () {
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) =>AddBookScren()));
-        },
+    return InkWell(
+        onTap: () =>onTap(),
         child: Container(
-          //margin: EdgeInsets.all(50),
-          height: sizeFromHeight(context, 14),
+          margin: EdgeInsets.symmetric(horizontal: 15),
+          height: sizeFromHeight(context, 13),
           width: sizeFromWidth(context, 10),
           alignment: Alignment.center,
           decoration: BoxDecoration(

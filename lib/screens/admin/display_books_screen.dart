@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_guide/widgets/displaybook.dart';
-class DisplayBooksSkreen extends StatelessWidget {
-  const DisplayBooksSkreen({Key? key}) : super(key: key);
+class DisplayBooksScreen extends StatelessWidget {
+  const DisplayBooksScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
-import 'package:library_guide/screens/log_in_screen.dart';
+import 'package:library_guide/screens/registration/log_in_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
               shape: BoxShape.circle,
               image: DecorationImage(
                 image: AssetImage(
-                  'assets/logo.png',
+                  'assets/bag.png',
                 ),
               )),
         ),

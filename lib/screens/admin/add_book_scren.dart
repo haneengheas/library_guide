@@ -2,13 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/widgets/addimage.dart';
-import 'package:library_guide/widgets/flatbuton.dart';
+import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/input_field.dart';
 import 'package:library_guide/widgets/logo.dart';
 
-class AddBookScren extends StatelessWidget {
-  const AddBookScren({Key? key}) : super(key: key);
-
+class AddBookScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -52,7 +50,7 @@ class AddBookScren extends StatelessWidget {
                 height: sizeFromHeight(context,20),
               ),
               AddImage(' + اضافة صورة '),
-              Buton('اضافة'),
+              Buton('اضافة',onTap: (){}),
               SizedBox(
                 height: sizeFromHeight(context,30),
               ),
