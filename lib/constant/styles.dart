@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,19 +8,20 @@ const Color gray = Color(0xFF8a8989);
 const Color white = Color(0xFFfafafa);
 const Color black = Color(0xFF09090a);
 
-TextStyle s1 = GoogleFonts.tajawal(
+TextStyle labelStyle = GoogleFonts.tajawal(
     textStyle: TextStyle(
+
         fontSize: 28, fontWeight: FontWeight.w600, color: gray, height: .2));
-TextStyle s2 = GoogleFonts.tajawal(
+TextStyle hintStyle = GoogleFonts.tajawal(
     textStyle: TextStyle(
-        fontSize: 15,
+        fontSize: 22,
         fontWeight: FontWeight.w400,
         color: clear_gray,
         height: 1.5));
-TextStyle s3 = GoogleFonts.tajawal(
+TextStyle buttonStyle = GoogleFonts.tajawal(
     textStyle: TextStyle(
         fontSize: 18, fontWeight: FontWeight.bold, color: white, height: 1.5));
-TextStyle s4 = GoogleFonts.tajawal(
+TextStyle appbarStyle = GoogleFonts.tajawal(
     textStyle: TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.w600,

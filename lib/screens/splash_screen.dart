@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(Duration(seconds: 5), () {
+    Timer(Duration(seconds: 10), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => LogInScreen()));
     });
@@ -29,13 +29,21 @@ class _SplashScreenState extends State<SplashScreen> {
           width: sizeFromWidth(context, 2),
           height: sizeFromHeight(context, 2),
           decoration: BoxDecoration(
-              //color: gray,
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage(
-                  'assets/bag.png',
-                ),
-              )),
+            color: clear_gray,
+            shape: BoxShape.circle,
+            border: Border.all(color: clear_gray,width: 1.5),
+            boxShadow: [BoxShadow(
+              color: clear_gray,
+              blurRadius: 3
+            )]
+          ),
+          child: CircleAvatar(
+              backgroundColor: white,
+              radius: 45,
+              child: Image(
+                  image: AssetImage(
+                'assets/logo.png',
+              ))),
         ),
       ),
     );

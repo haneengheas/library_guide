@@ -24,7 +24,7 @@ CategoryItem({   required this.text,
         ),
         child: Directionality(
           textDirection: TextDirection.rtl,
-          child: Center(child: Text(text,style: s1,)),
+          child: Center(child: Text(text,style: labelStyle,)),
         ),
       ),
     );

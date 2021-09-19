@@ -20,7 +20,7 @@ class _InputFieldState extends State<InputField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 12.5),
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: TextFormField(
@@ -35,8 +35,8 @@ class _InputFieldState extends State<InputField> {
             floatingLabelBehavior: FloatingLabelBehavior.always,
             labelText: widget.label,
             hintText: widget.hint,
-            labelStyle: s1,
-            hintStyle: s2,
+            labelStyle: labelStyle,
+            hintStyle: hintStyle,
           ),
         ),
       ),

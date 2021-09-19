@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
-import 'package:library_guide/screens/admin/category.dart';
+import 'package:library_guide/screens/admin/category_screen/view.dart';
 import 'package:library_guide/screens/registration/sign_in_screen.dart';
 import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/button/textbuton.dart';
@@ -30,7 +30,7 @@ class _LogInScreenState extends State<LogInScreen> {
           Center(
               child: Text(
             'تسجيل الدخول',
-            style: s1,
+            style: labelStyle,
           )),
           SizedBox(
             height: 20,
@@ -70,12 +70,16 @@ class _LogInScreenState extends State<LogInScreen> {
                       MaterialPageRoute(builder: (context) => SignInScreen()));
                 },
               ),
+              SizedBox(
+                height: sizeFromHeight(context, 12),
+              ),
               Text(
                 'ليس لديك حساب ؟',
-                style: s2,
+                style: hintStyle,
               ),
             ],
           ),
+
           Buton("تسجيل دخول", onTap:  () {
             print ('00');
             Navigator.pushReplacement(

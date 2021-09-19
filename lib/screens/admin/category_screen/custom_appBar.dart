@@ -10,7 +10,7 @@ Widget appBar(){
         Center(
           child: Text(
             'دليل المكتبة',
-            style: s4,
+            style: appbarStyle,
             textDirection: TextDirection.rtl,
           ),
         ),
@@ -19,8 +19,8 @@ Widget appBar(){
         ),
         CircleAvatar(
           radius: 25,
-          backgroundColor: purple,
-          // backgroundImage: AssetImage('assets/logo.png'),
+          backgroundColor: white,
+          backgroundImage: AssetImage('assets/logo.png'),
         ),
       ],
       centerTitle: true,

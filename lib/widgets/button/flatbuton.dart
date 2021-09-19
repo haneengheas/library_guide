@@ -9,7 +9,8 @@ class Buton extends StatelessWidget {
     return InkWell(
         onTap: () =>onTap(),
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 15),
+          margin: EdgeInsets.symmetric(horizontal: 15,
+          ),
           height: sizeFromHeight(context, 13),
           width: sizeFromWidth(context, 10),
           alignment: Alignment.center,
@@ -19,7 +20,7 @@ class Buton extends StatelessWidget {
           ),
           child: Text(
             text,
-            style: s3,
+            style: buttonStyle,
           ),
         ));
   }

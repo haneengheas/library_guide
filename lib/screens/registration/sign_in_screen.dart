@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
+import 'package:library_guide/screens/admin/category_screen/view.dart';
 import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/button/textbuton.dart';
 import 'package:library_guide/widgets/input_field.dart';
@@ -24,7 +25,7 @@ class SignInScreen extends StatelessWidget {
           Center(
               child: Text(
             'تسجيل جديد',
-            style: s1,
+            style: labelStyle,
           )),
           SizedBox(
             height: 15,
@@ -47,17 +48,20 @@ class SignInScreen extends StatelessWidget {
           // ),
           InputField(
               hint: "أكد كلمة مرورك", label: "تأكيد كلمة المرور ", scure: true),
-          // SizedBox(
-          //   height: sizeFromHeight(context, 20),
-          // ),
-          Buton('تسجيل',onTap:  () {}),
+          SizedBox(
+            height: sizeFromHeight(context, 12),
+          ),
+          Buton('تسجيل', onTap: () {
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => Category()));
+          }),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Textbuton('سجل دخول', onTap: () {}),
               Text(
                 'هل لديك حساب بالفعل ؟',
-                style: s2,
+                style: hintStyle,
               ),
             ],
           ),
