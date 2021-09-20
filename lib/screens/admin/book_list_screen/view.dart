@@ -16,7 +16,7 @@ class DisplayBooksScreen extends StatelessWidget {
             ),
             Text('جميع الكتب',style: labelStyle,),
             SizedBox(
-              height: MediaQuery.of(context).size.height-70,
+              height: sizeFromHeight(context, 1),
               child: ListView.builder(
                   itemCount: 20,
                   itemBuilder: (context, index) {
