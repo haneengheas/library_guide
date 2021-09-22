@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
               radius: 45,
               child: Image(
                   image: AssetImage(
-                'assets/logo.png',
+                'assets/Logo1.png',
               ))),
         ),
       ),
