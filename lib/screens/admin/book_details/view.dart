@@ -19,7 +19,7 @@ class _BookDetailsState extends State<BookDetails> {
       backgroundColor: white,
       body: Directionality(
         textDirection: TextDirection.rtl,
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(
               height: sizeFromHeight(context, 8),

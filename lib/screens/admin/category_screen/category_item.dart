@@ -11,7 +11,7 @@ CategoryItem({   required this.text,
     return  InkWell(
       onTap: ()=>onTap(),
       child: Container(
-        width: sizeFromWidth(context, 1.5),
+        width: sizeFromWidth(context, 1),
         height: 60,
         margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
         decoration: BoxDecoration(

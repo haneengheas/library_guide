@@ -18,6 +18,7 @@ class _CommentItemState extends State<CommentItem> {
       width: sizeFromWidth(context, 1),
       height: 150,
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: white,
@@ -27,11 +28,17 @@ class _CommentItemState extends State<CommentItem> {
       child: Column(
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [InputText(text: 'اسم المستخدم', textDescribtion: ''),
-              SizedBox(
-                width: sizeFromWidth(context, 5),
+              Expanded(
+                child: SizedBox(
+                  //width: sizeFromWidth(context, 3),
+                ),
               ),
-              Text('20/10/2021',style: hintStyle,),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                child: Text('20/10/2021',style: hintStyle,),
+              ),
             ],
           ),
           Directionality(
