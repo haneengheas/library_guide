@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const Color purple = Color(0xFFb39ddb);
-const Color clear_gray = Color(0xFFbdbdbd);
+const Color clear_gray = Color(0xffc4c4c4);
 const Color gray = Color(0xFF8a8989);
 const Color white = Color(0xFFfafafa);
+const Color white2 = Color(0xfff1f1f1);
 const Color black = Color(0xFF09090a);
 
 TextStyle labelStyle = GoogleFonts.tajawal(

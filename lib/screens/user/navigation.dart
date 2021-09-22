@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_guide/screens/user/profile_screen/profile.dart';
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({Key? key}) : super(key: key);
 
@@ -11,7 +12,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   List <Widget> pages=[
     Text('data'),
     Text('data'),
-    Text('data'),
+ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
           items: [
         BottomNavigationBarItem(icon: Icon(Icons.home),label: ''),
         BottomNavigationBarItem(icon: Icon(Icons.home),label: ''),
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: ''),
+        BottomNavigationBarItem(icon: Icon(Icons.person_sharp),label: ''),
 
       ]),
     );
