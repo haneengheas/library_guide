@@ -3,6 +3,7 @@ import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/screens/admin/book_details/view.dart';
 import 'package:library_guide/screens/admin/category_screen/view.dart';
 import 'package:library_guide/screens/registration/sign_in_screen.dart';
+import 'package:library_guide/screens/user/navigation.dart';
 import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/button/textbuton.dart';
 import 'package:library_guide/widgets/input_field.dart';
@@ -91,7 +92,7 @@ class _LogInScreenState extends State<LogInScreen> {
             }
             else{
               Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => BookDetails()));
+                  context, MaterialPageRoute(builder: (context) => NavigationScreen()));
             }
             print ('00');
           }),
