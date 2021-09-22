@@ -16,7 +16,7 @@ class _CategoryState extends State<Category> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           appBar(),
           SizedBox(
