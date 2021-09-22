@@ -84,7 +84,7 @@ class _LogInScreenState extends State<LogInScreen> {
             print ('00');
             Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (context) => Category()));
-          })
+          }),
         ],
       ),
     );

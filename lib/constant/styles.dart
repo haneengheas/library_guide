@@ -19,7 +19,7 @@ TextStyle labelStyle = GoogleFonts.tajawal(
             height: 1.5));
 TextStyle buttonStyle = GoogleFonts.tajawal(
     textStyle: TextStyle(
-        fontSize: 18, fontWeight: FontWeight.bold, color: white, height: 1.5));
+        fontSize: 20, fontWeight: FontWeight.bold, color: white, height: 1.5));
 TextStyle appbarStyle = GoogleFonts.tajawal(
     textStyle: TextStyle(
         fontSize: 22,

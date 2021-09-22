@@ -18,9 +18,9 @@ Widget appBar(){
           width: 10,
         ),
         CircleAvatar(
-          radius: 25,
+          radius: 35,
           backgroundColor: white,
-          backgroundImage: AssetImage('assets/logo.png'),
+          backgroundImage: AssetImage('assets/logo2.png'),
         ),
       ],
       centerTitle: true,
