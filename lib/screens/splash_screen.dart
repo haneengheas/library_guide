@@ -23,28 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          width: sizeFromWidth(context, 2),
-          height: sizeFromHeight(context, 2),
-          decoration: BoxDecoration(
-            color: clear_gray,
-            shape: BoxShape.circle,
-            border: Border.all(color: clear_gray,width: 1.5),
-            boxShadow: [BoxShadow(
-              color: clear_gray,
-              blurRadius: 3
-            )]
-          ),
-          child: CircleAvatar(
-              backgroundColor: white,
-              radius: 45,
-              child: Image(
-                  image: AssetImage(
-                'assets/Logo1.png',
-              ))),
-        ),
-      ),
+      body: Image(image:AssetImage("assets/logo2.png"))
     );
   }
 }
