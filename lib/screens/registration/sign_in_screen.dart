@@ -6,9 +6,10 @@ import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/button/textbuton.dart';
 import 'package:library_guide/widgets/input_field.dart';
 import 'package:library_guide/widgets/logo.dart';
-
+@immutable
 class SignInScreen extends StatelessWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,24 +31,39 @@ class SignInScreen extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          InputField(hint: "ادخل اسمك", label: " الاسم ", scure: false),
+          InputField(
+            hint: "ادخل اسمك",
+            label: " الاسم ",
+            scure: false,
+            controller: _emailController,
+          ),
           // SizedBox(
           //   height: sizeFromHeight(context, 20),
           // ),
           InputField(
-              hint: "ادخل البريد الالكتروني",
-              label: "البريد الالكتروني ",
-              scure: false),
+            hint: "ادخل البريد الالكتروني",
+            label: "البريد الالكتروني ",
+            scure: false,
+            controller: _emailController,
+          ),
           // SizedBox(
           //   height: sizeFromHeight(context, 20),
           // ),
           InputField(
-              hint: "ادخل كلمة مرور", label: "كلمة المرور ", scure: true),
+            hint: "ادخل كلمة مرور",
+            label: "كلمة المرور ",
+            scure: true,
+            controller: _emailController,
+          ),
           // SizedBox(
           //   height: sizeFromHeight(context, 20),
           // ),
           InputField(
-              hint: "أكد كلمة مرورك", label: "تأكيد كلمة المرور ", scure: true),
+            hint: "أكد كلمة مرورك",
+            label: "تأكيد كلمة المرور ",
+            scure: true,
+            controller: _emailController,
+          ),
           SizedBox(
             height: sizeFromHeight(context, 12),
           ),
