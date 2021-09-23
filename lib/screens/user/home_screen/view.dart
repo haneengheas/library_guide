@@ -10,73 +10,81 @@ class HomePageScren extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(
+    return Scaffold(
       body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: Center(child: Logo(height: 120,)),
-          ),
-          Center(
-              child: Text(
-                'الصفحة الرئيسية ',
-                style: labelStyle,
-              )),
-          SizedBox(height: sizeFromHeight(context, 20),),
-          Expanded(
-            child: ListView(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                   
-                    Padding(
-                      padding: const EdgeInsets.only(right: 30),
-                      child: Text(
-                        'مقترحات الكتب',
-                        style: appbarStyle,
-                      ),
+      children: [
+        SizedBox(
+          height: 50,
+        ),
+        Center(
+            child: Logo(
+          height: 100,
+        )),
+        SizedBox(
+          height: 20,
+        ),
+        Center(
+            child: Text(
+          'الصفحة الرئيسية ',
+          style: labelStyle,
+        )),
+        SizedBox(
+          height: 10,
+        ),
+        SizedBox(
+          height: sizeFromHeight(context, 1.3),
+          child: ListView(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 30),
+                    child: Text(
+                      'مقترحات الكتب',
+                      style: appbarStyle,
                     ),
-                    BooksBox(4),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 30),
-                      child: Text(
-                        'روايات',
-                        style: appbarStyle,
-                      ),
+                  ),
+                  BooksBox(4),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 30),
+                    child: Text(
+                      'روايات',
+                      style: appbarStyle,
                     ),
-                    BooksBox(10),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 30),
-                      child: Text(
-                        'أدب',
-                        style: appbarStyle,
-                      ),
+                  ),
+                  BooksBox(10),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 30),
+                    child: Text(
+                      'أدب',
+                      style: appbarStyle,
                     ),
-                    BooksBox(10),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 30),
-                      child: Text(
-                        'قدرات',
-                        style: appbarStyle,
-                      ),
+                  ),
+                  BooksBox(10),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 30),
+                    child: Text(
+                      'قدرات',
+                      style: appbarStyle,
                     ),
-                    BooksBox(10),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 30),
-                      child: Text(
-                        'لغات',
-                        style: appbarStyle,
-                      ),
+                  ),
+                  BooksBox(10),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 30),
+                    child: Text(
+                      'لغات',
+                      style: appbarStyle,
                     ),
-                    BooksBox(10)
-                  ],
-                ),
-              ],
+                  ),
+                  BooksBox(10)
+                ],
             ),
+          ],
           ),
-        ],
+        ),
+    ],
       )
-    ));
+    );
   }
 }

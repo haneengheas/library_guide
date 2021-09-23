@@ -5,7 +5,7 @@ import 'package:library_guide/screens/admin/book_details/view.dart';
 
 class BooksBox extends StatelessWidget {
 // الكلاس ده عبارة عن البوكس اللي هيكون فيه الكتاب مع اسمه من تحت ..وهنستدعيها في ال rowbooks
- final int length;
+  final int length;
 
   BooksBox(this.length);
 
@@ -24,18 +24,19 @@ class BooksBox extends StatelessWidget {
             itemCount: length,
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
-               borderRadius: BorderRadius.circular(23),
+                borderRadius: BorderRadius.circular(23),
                 highlightColor: purple,
                 onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => BookDetails(icon: Icons.add,)));
+                          builder: (context) => BookDetails(
+                                icon: Icons.add,
+                              )));
                 },
                 child: Column(
                   children: [
                     Container(
-
                       height: sizeFromHeight(context, 6),
                       width: sizeFromWidth(context, 4.6),
                       margin: EdgeInsets.all(3),
