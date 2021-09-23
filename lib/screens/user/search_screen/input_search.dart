@@ -3,12 +3,10 @@ import 'package:library_guide/constant/styles.dart';
 
 class InputSearch extends StatefulWidget {
   final String hint;
-  final String label;
   final TextEditingController controller;
 
   InputSearch(
       {required this.hint,
-        required this.label,
         required this.controller});
 
   @override
@@ -25,18 +23,19 @@ class _InputSearchState extends State<InputSearch> {
         child: TextFormField(
           controller: widget.controller,
           decoration: InputDecoration(
-            enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: purple, width: 2.5),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
             ),
-            focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: purple, width: 2.5),
-            ),
-            floatingLabelBehavior: FloatingLabelBehavior.always,
-            labelText: widget.label,
+            fillColor: Colors.grey.shade100,
+            filled: true,
+            enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+            color: purple,
+            width: 2.0,
+            ),),
             hintText: widget.hint,
-            labelStyle: labelStyle,
             hintStyle: hintStyle,
-            // prefixIcon: Ico
+
           ),
         ),
       ),
