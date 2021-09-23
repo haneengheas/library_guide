@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 class Logo extends StatelessWidget {
+  double height;
+  Logo({required this.height});
   @override
+
   Widget build(BuildContext context) {
-    return     Image(image: AssetImage('assets/logo2.png',),height: 150,);
+    return     Image(image: AssetImage('assets/logo2.png',),height: height,);
 
   }
 }
