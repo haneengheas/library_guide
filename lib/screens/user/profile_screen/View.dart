@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/screens/registration/log_in_screen.dart';
-import 'package:library_guide/screens/user/profile_screen/edit_profile/editprofile.dart';
-import 'package:library_guide/screens/user/profile_screen/edit_profile/editprofilebutton.dart';
+import 'package:library_guide/screens/user/profile_screen/edit_profile/view.dart';
+import 'package:library_guide/screens/user/profile_screen/edit_profile/edit_profile_button.dart';
 import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/logo.dart';
-
-import 'userprofilecontainer.dart';
+import 'user_item.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -17,6 +16,9 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
+  //ToDo
+//غيرت اسم ال بروفايل  ل فيو
+// عدلت المسافات و شيلت ال expand
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
@@ -24,7 +26,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           SizedBox(
             height: 25,
           ),
-          Logo(),
+          Logo(height: 100,),
           SizedBox(height: 20),
           Center(
             child: Text(
@@ -33,18 +35,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           SizedBox(height: 50),
-          UserProfile(
+          UserItem(
             ": الأسم",
             textContainer: "Ahmed Bahgat",
           ),
-          SizedBox(height: 50),
-          UserProfile(
-            ": البريد الألكترونى",
+          SizedBox(height: 30),
+          UserItem(
+            " : البريد الألكترونى  ",
             textContainer: "Ahmed1223@gmail.com",
           ),
-          SizedBox(height: 50),
-          EditButten("تعديل بياناتى", onTap: () {
-            Navigator.pushReplacement(context,
+          SizedBox(height: 70),
+          EditButton("تعديل بياناتى", onTap: () {
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => EditProfile()));}),
           SizedBox(height: 20),
           Buton("تسجيل خروج", onTap: () {

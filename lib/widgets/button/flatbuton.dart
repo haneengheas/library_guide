@@ -11,7 +11,7 @@ class Buton extends StatelessWidget {
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 15,
           ),
-          height: sizeFromHeight(context, 11),
+          height: sizeFromHeight(context, 13),
           width: sizeFromWidth(context, 10),
           alignment: Alignment.center,
           decoration: BoxDecoration(

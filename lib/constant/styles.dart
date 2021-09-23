@@ -1,4 +1,5 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,21 +13,21 @@ const Color black = Color(0xFF09090a);
 TextStyle labelStyle = GoogleFonts.tajawal(
     textStyle: TextStyle(
         fontSize: 28, fontWeight: FontWeight.w600, color: gray, height: .2));
-    TextStyle hintStyle = GoogleFonts.tajawal(
-        textStyle: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.w400,
-            color: clear_gray,
-            height: 1.5));
+TextStyle hintStyle = GoogleFonts.tajawal(
+    textStyle: TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.w400,
+        color: clear_gray,
+        height: 1.5));
 TextStyle buttonStyle = GoogleFonts.tajawal(
     textStyle: TextStyle(
         fontSize: 20, fontWeight: FontWeight.bold, color: white, height: 1.5));
 TextStyle appbarStyle = GoogleFonts.tajawal(
     textStyle: TextStyle(
-        fontSize: 22,
-        fontWeight: FontWeight.w600,
-        color: gray,
-        height: 1.5));
+        fontSize: 22, fontWeight: FontWeight.w600, color: gray, height: 1.5));
+TextStyle buttonTextStyle = GoogleFonts.tajawal(
+    textStyle: TextStyle(
+        fontSize: 20, fontWeight: FontWeight.bold, color: purple, height: 1.5));
 
 double sizeFromHeight(BuildContext context, double fraction,
     {bool hasAppBar = true}) {
