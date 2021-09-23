@@ -6,8 +6,8 @@ import 'package:library_guide/screens/admin/book_details/comments_item.dart';
 import 'package:library_guide/screens/admin/book_details/input_text.dart';
 
 class BookDetails extends StatefulWidget {
-  const BookDetails({Key? key}) : super(key: key);
-
+ final IconData icon;
+ BookDetails({required this.icon});
   @override
   _BookDetailsState createState() => _BookDetailsState();
 }
@@ -78,7 +78,7 @@ class _BookDetailsState extends State<BookDetails> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: purple,
         onPressed: () {},
-        child: Icon(Icons.edit),
+        child: Icon(widget.icon),
       ),
     );
   }

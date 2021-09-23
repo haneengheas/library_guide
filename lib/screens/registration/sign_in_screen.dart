@@ -4,12 +4,13 @@ import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/screens/admin/category_screen/view.dart';
 import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/button/textbuton.dart';
-import 'package:library_guide/widgets/input_field.dart';
+import 'package:library_guide/widgets/input_field_regeist.dart';
 import 'package:library_guide/widgets/logo.dart';
 class SignInScreen extends StatefulWidget {
-  late final String email;
-  late final String password;
-  late final String name;
+  final TextEditingController emailController =TextEditingController();
+  final TextEditingController passwordController =TextEditingController();
+  final TextEditingController nameController =TextEditingController();
+
 
   @override
   _SignInScreenState createState() => _SignInScreenState();
@@ -24,7 +25,7 @@ class _SignInScreenState extends State<SignInScreen> {
           SizedBox(
             height: 15,
           ),
-          Logo(height: 140,),
+          Logo(height: 120,),
           SizedBox(
             height: 35,
           ),
@@ -36,50 +37,36 @@ class _SignInScreenState extends State<SignInScreen> {
           SizedBox(
             height: 15,
           ),
-          InputField(
+          InputFieldRegist(
             hint: "ادخل اسمك",
             label: " الاسم ",
             scure: false,
-            onChanged: (value){
-              widget.name=value;
-            },
+           controller: widget.nameController,
 
           ),
-          // SizedBox(
-          //   height: sizeFromHeight(context, 20),
-          // ),
-          InputField(
+          InputFieldRegist(
             hint: "ادخل البريد الالكتروني",
             label: "البريد الالكتروني ",
             scure: false,
-            onChanged: (value){
-              widget.email=value;
-            },
+            controller: widget.emailController,
           ),
-          // SizedBox(
-          //   height: sizeFromHeight(context, 20),
-          // ),
-          InputField(
+
+          InputFieldRegist(
             hint: "ادخل كلمة مرور",
             label: "كلمة المرور ",
             scure: true,
-            onChanged: (value){
-              widget.password=value;
-            },
+            controller: widget.passwordController,
           ),
-          // SizedBox(
-          //   height: sizeFromHeight(context, 20),
-          // ),
-          InputField(
+
+          InputFieldRegist(
             hint: "أكد كلمة مرورك",
             label: "تأكيد كلمة المرور ",
             scure: true,
-            onChanged: (value){
-              widget.password=value;
-            },
+            controller: widget.passwordController,
+
           ),
           SizedBox(
-            height: sizeFromHeight(context, 12),
+            height: 20
           ),
           Buton('تسجيل', onTap: () {
             Navigator.pushReplacement(

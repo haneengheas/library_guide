@@ -11,7 +11,7 @@ class NavigationScreen extends StatefulWidget {
 }
 
 class _NavigationScreenState extends State<NavigationScreen> {
-  int pageindex=0;
+  int pageindex=1;
   List <Widget> pages=[
     //ToDo
     SearchScreen(),
@@ -27,7 +27,6 @@ class _NavigationScreenState extends State<NavigationScreen> {
          unselectedItemColor: gray,
         selectedItemColor: purple,
        iconSize: 40,
-
         type: BottomNavigationBarType.fixed,
         currentIndex: pageindex,
           onTap: (value){

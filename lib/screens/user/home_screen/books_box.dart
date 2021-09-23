@@ -5,7 +5,7 @@ import 'package:library_guide/screens/admin/book_details/view.dart';
 
 class BooksBox extends StatelessWidget {
 // الكلاس ده عبارة عن البوكس اللي هيكون فيه الكتاب مع اسمه من تحت ..وهنستدعيها في ال rowbooks
-  int length;
+ final int length;
 
   BooksBox(this.length);
 
@@ -30,7 +30,7 @@ class BooksBox extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext) => BookDetails()));
+                          builder: (context) => BookDetails(icon: Icons.add,)));
                 },
                 child: Column(
                   children: [

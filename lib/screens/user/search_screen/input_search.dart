@@ -35,6 +35,7 @@ class _InputSearchState extends State<InputSearch> {
             ),),
             hintText: widget.hint,
             hintStyle: hintStyle,
+            prefixIcon: Icon(Icons.search,size: 25,color: clear_gray,),
 
           ),
         ),
