@@ -7,7 +7,7 @@ class Logo extends StatelessWidget {
       image: AssetImage(
         'assets/logo2.png',
       ),
-      height: 140,
+      height: 100,
     );
   }
 }
