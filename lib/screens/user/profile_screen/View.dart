@@ -37,12 +37,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           SizedBox(height: 50),
           UserItem(
             ": الأسم",
-            textContainer: "Ahmed Bahgat",
+            textContainer: "الاسم",
           ),
           SizedBox(height: 30),
           UserItem(
             " : البريد الألكترونى  ",
-            textContainer: "Ahmed1223@gmail.com",
+            textContainer: "البريد الالكتروني",
           ),
           SizedBox(height: 70),
           EditButton("تعديل بياناتى", onTap: () {

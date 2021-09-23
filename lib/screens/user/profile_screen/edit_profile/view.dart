@@ -30,8 +30,8 @@ class _EditProfileState extends State<EditProfile> {
             height: 60,
           ),
           InputFieldRegist(
-            hint: 'ادخل الرقم السرى القديم',
-            label: 'الرقم السرى القديم',
+            hint: 'ادخل كلمةالمرورالقديم',
+            label: 'كلمة المرور القديم',
             scure: false,
             controller: widget.passwordController,
           ),
@@ -39,8 +39,8 @@ class _EditProfileState extends State<EditProfile> {
             height: 20,
           ),
           InputFieldRegist(
-            hint: 'ادخل الرقم السرى الجديد',
-            label: 'الرقم السرى الجديد',
+            hint: 'ادخل كلمة المرور الجديد',
+            label: 'كلمة المرور الجديد',
             scure: false,
             controller: widget.passwordController,
 
@@ -49,8 +49,8 @@ class _EditProfileState extends State<EditProfile> {
             height: 20,
           ),
           InputFieldRegist(
-            hint: ' تاكيد الرقم السرى الجديد',
-            label: ' تاكيد الرقم السرى الجديد',
+            hint: ' تاكيد كلمة المرورالجديد',
+            label: ' تاكيد كلمة المرورالجديد',
             scure: false,
             controller: widget.passwordController,
 
