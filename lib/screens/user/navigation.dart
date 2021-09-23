@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/screens/user/home_screen/view.dart';
-import 'package:library_guide/screens/user/profile_screen/profile.dart';
+import 'package:library_guide/screens/user/profile_screen/View.dart';
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({Key? key}) : super(key: key);
 

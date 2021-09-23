@@ -18,7 +18,7 @@ class HomePageScren extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 10),
-                child: Center(child: Logo()),
+                child: Center(child: Logo(height: 100,)),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 10,top: 10),
