@@ -1,27 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
 
-class InputField extends StatefulWidget {
+class InputFieldRegist extends StatefulWidget {
   final String hint;
   final String label;
   final bool scure;
-  final Function onChanged;
+  final TextEditingController controller;
 
-
-  InputField(
-
-      {
-        required this.hint,
+  InputFieldRegist(
+      {required this.hint,
       required this.label,
       required this.scure,
-        required this.onChanged
-      });
+      required this.controller});
 
   @override
-  _InputFieldState createState() => _InputFieldState();
+  _InputFieldRegistState createState() => _InputFieldRegistState();
 }
 
-class _InputFieldState extends State<InputField> {
+class _InputFieldRegistState extends State<InputFieldRegist> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,7 +25,7 @@ class _InputFieldState extends State<InputField> {
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: TextFormField(
-          onChanged: widget.onChanged() ,
+          controller: widget.controller,
           obscureText: widget.scure,
           decoration: InputDecoration(
             enabledBorder: UnderlineInputBorder(

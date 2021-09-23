@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
-import 'package:library_guide/screens/admin/book_details/view.dart';
 import 'package:library_guide/screens/admin/category_screen/view.dart';
 import 'package:library_guide/screens/registration/sign_in_screen.dart';
 import 'package:library_guide/screens/user/navigation.dart';
 import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/button/textbuton.dart';
-import 'package:library_guide/widgets/input_field.dart';
+import 'package:library_guide/widgets/input_field_regeist.dart';
 import 'package:library_guide/widgets/logo.dart';
-
 class LogInScreen extends StatefulWidget {
+  // late final String email;
+  // late  final String password;
+ final TextEditingController emailController =TextEditingController();
+ final TextEditingController passwordController =TextEditingController();
 
   @override
   _LogInScreenState createState() => _LogInScreenState();
 }
-
 class _LogInScreenState extends State<LogInScreen> {
-  TextEditingController _emailController=TextEditingController();
-  TextEditingController _passwordController=TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,17 +38,19 @@ class _LogInScreenState extends State<LogInScreen> {
           SizedBox(
             height: 20,
           ),
-          InputField(
+          InputFieldRegist(
             hint: 'ادخل البريد الالكتروني',
             label: 'البريد الالكتروني',
             scure: false,
-            controller: _emailController,
+            controller: widget.emailController,
+
           ),
-          InputField(
+          InputFieldRegist(
             hint: 'ادخل كلمة المرور',
             label: 'كلمة المرور',
             scure: true,
-            controller: _emailController,
+            controller: widget.passwordController,
+
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -86,7 +88,7 @@ class _LogInScreenState extends State<LogInScreen> {
           ),
 
           Buton("تسجيل دخول", onTap:  () {
-            if(_emailController.text=='1'){
+            if(widget.emailController.text=='1'){
               Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (context) => Category()));
             }

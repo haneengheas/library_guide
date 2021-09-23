@@ -6,10 +6,15 @@ import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/button/textbuton.dart';
 import 'package:library_guide/widgets/input_field.dart';
 import 'package:library_guide/widgets/logo.dart';
-@immutable
-class SignInScreen extends StatelessWidget {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+class SignInScreen extends StatefulWidget {
+  late final String email;
+  late final String password;
+  late final String name;
+
+  @override
+  _SignInScreenState createState() => _SignInScreenState();
+}
+class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +40,10 @@ class SignInScreen extends StatelessWidget {
             hint: "ادخل اسمك",
             label: " الاسم ",
             scure: false,
-            controller: _emailController,
+            onChanged: (value){
+              widget.name=value;
+            },
+
           ),
           // SizedBox(
           //   height: sizeFromHeight(context, 20),
@@ -44,7 +52,9 @@ class SignInScreen extends StatelessWidget {
             hint: "ادخل البريد الالكتروني",
             label: "البريد الالكتروني ",
             scure: false,
-            controller: _emailController,
+            onChanged: (value){
+              widget.email=value;
+            },
           ),
           // SizedBox(
           //   height: sizeFromHeight(context, 20),
@@ -53,7 +63,9 @@ class SignInScreen extends StatelessWidget {
             hint: "ادخل كلمة مرور",
             label: "كلمة المرور ",
             scure: true,
-            controller: _emailController,
+            onChanged: (value){
+              widget.password=value;
+            },
           ),
           // SizedBox(
           //   height: sizeFromHeight(context, 20),
@@ -62,7 +74,9 @@ class SignInScreen extends StatelessWidget {
             hint: "أكد كلمة مرورك",
             label: "تأكيد كلمة المرور ",
             scure: true,
-            controller: _emailController,
+            onChanged: (value){
+              widget.password=value;
+            },
           ),
           SizedBox(
             height: sizeFromHeight(context, 12),

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/screens/user/home_screen/books_box.dart';
 import 'package:library_guide/widgets/logo.dart';
