@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/screens/admin/category_screen/view.dart';
+import 'package:library_guide/screens/registration/log_in_screen.dart';
 import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/button/textbuton.dart';
 import 'package:library_guide/widgets/input_field_regeist.dart';
@@ -75,7 +76,7 @@ class _SignInScreenState extends State<SignInScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Textbuton('سجل دخول', onTap: () {}),
+              Textbuton('سجل دخول', onTap: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LogInScreen()));}),
               Text(
                 'هل لديك حساب بالفعل ؟',
                 style: hintStyle,

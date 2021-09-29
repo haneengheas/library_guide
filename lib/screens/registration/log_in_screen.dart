@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/screens/admin/category_screen/view.dart';
+import 'package:library_guide/screens/registration/password_recovery.dart';
 import 'package:library_guide/screens/registration/sign_in_screen.dart';
 import 'package:library_guide/screens/user/navigation.dart';
 import 'package:library_guide/widgets/button/flatbuton.dart';
@@ -59,7 +60,7 @@ class _LogInScreenState extends State<LogInScreen> {
               children: [
                 Textbuton('هل نسيت كلمة المرور', onTap: () {
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => SignInScreen()));
+                      MaterialPageRoute(builder: (context) => Password_Recovery()));
                 })
               ],
             ),
