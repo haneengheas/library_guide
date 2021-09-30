@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.library_guide.library_guide">
-   <application
-        android:label="library_guide"
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:label="دليل المكتبة"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
