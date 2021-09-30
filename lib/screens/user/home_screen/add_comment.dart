@@ -14,6 +14,7 @@ class Add_Comment extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(20),
           child: ListView(
+
             children: [
               SizedBox(
                 height: 20,
@@ -44,7 +45,7 @@ class Add_Comment extends StatelessWidget {
                     floatingLabelBehavior: FloatingLabelBehavior.always,
                     labelText: 'اكتب تعليقك',
 
-                    //hintText: 'أصف تعليقاً',
+
 
                     labelStyle: labelStyle,
                     hintStyle: hintStyle,
