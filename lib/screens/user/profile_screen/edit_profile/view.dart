@@ -21,7 +21,7 @@ class _EditProfileState extends State<EditProfile> {
       return;
     }
   }
-
+late String name;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,11 +55,17 @@ class _EditProfileState extends State<EditProfile> {
                     return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
                   }
                 },
+                  onChanged: (value) {
+                    name = value;
+                  },
               ),
               SizedBox(
                 height: 20,
               ),
               InputFieldRegist(
+                onChanged: (value) {
+                  name = value;
+                },
                 hint: 'ادخل كلمة المرور الجديد',
                 label: 'كلمة المرور الجديد',
                 scure: false,
@@ -76,6 +82,9 @@ class _EditProfileState extends State<EditProfile> {
                 height: 20,
               ),
               InputFieldRegist(
+                onChanged: (value) {
+                  name = value;
+                },
                 hint: ' تاكيد كلمة المرورالجديد',
                 label: ' تاكيد كلمة المرورالجديد',
                 scure: false,

@@ -7,6 +7,7 @@ class InputFieldRegist extends StatefulWidget {
   final bool scure;
   final TextEditingController controller;
   final FormFieldValidator validator;
+  final Function onChanged;
 
   InputFieldRegist(
       {required this.hint,
@@ -14,6 +15,7 @@ class InputFieldRegist extends StatefulWidget {
       required this.scure,
       required this.controller,
         required this.validator,
+        required this.onChanged
       });
 
   @override
@@ -28,6 +30,8 @@ class _InputFieldRegistState extends State<InputFieldRegist> {
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: TextFormField(
+          onChanged: widget.onChanged(),
+
           controller: widget.controller,
           obscureText: widget.scure,
           validator: widget.validator,

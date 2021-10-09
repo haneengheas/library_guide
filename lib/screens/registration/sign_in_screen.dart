@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/screens/admin/category_screen/view.dart';
@@ -6,27 +7,35 @@ import 'package:library_guide/widgets/button/flatbuton.dart';
 import 'package:library_guide/widgets/button/textbuton.dart';
 import 'package:library_guide/widgets/input_field_regeist.dart';
 import 'package:library_guide/widgets/logo.dart';
-class SignInScreen extends StatefulWidget {
-  final TextEditingController emailController =TextEditingController();
-  final TextEditingController passwordController =TextEditingController();
-  final TextEditingController nameController =TextEditingController();
 
+class SignInScreen extends StatefulWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
 
   @override
   _SignInScreenState createState() => _SignInScreenState();
 }
+
 class _SignInScreenState extends State<SignInScreen> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   validateForm() {
     print('aa');
     if (_formKey.currentState!.validate()) {
       print('login');
-      Navigator.push(context, MaterialPageRoute(builder: (context)=> Category()));
-
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Category()));
     } else {
       return;
     }
   }
+
+  final _auth = FirebaseAuth.instance;
+  bool modal_progress_hud = false;
+  late String email;
+  late String password;
+  late String name;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +45,9 @@ class _SignInScreenState extends State<SignInScreen> {
           SizedBox(
             height: 15,
           ),
-          Logo(height: 120,),
+          Logo(
+            height: 120,
+          ),
           SizedBox(
             height: 35,
           ),
@@ -49,77 +60,105 @@ class _SignInScreenState extends State<SignInScreen> {
             height: 15,
           ),
           Form(
-           key: _formKey,
+              key: _formKey,
               child: Column(
-            children: [
-              InputFieldRegist(
-                hint: "ادخل اسمك",
-                label: " الاسم ",
-                scure: false,
-                controller: widget.nameController,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'برجاءادخال الاسم';
-                  } else if (value.length < 5) {
-                    return 'برجاء كتابه الاسم بشكل صحيح';
-                  }
-                },
-
-              ),
-              InputFieldRegist(
-                hint: "ادخل البريد الالكتروني",
-                label: "البريد الالكتروني ",
-                scure: false,
-                controller: widget.emailController,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-                  } else if (value.length < 5) {
-                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-                  }
-                },
-              ),
-
-              InputFieldRegist(
-                hint: "ادخل كلمة مرور",
-                label: "كلمة المرور ",
-                scure: true,
-                controller: widget.passwordController,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'برجاء كتابه كلمة المرور بشكل صحيح';
-                  } else if (value.length < 5) {
-                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-                  }
-                },
-              ),
-
-              InputFieldRegist(
-                hint: "أكد كلمة مرورك",
-                label: "تأكيد كلمة المرور ",
-                scure: true,
-                controller: widget.passwordController,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'برجاء كتابه كلمة المرور بشكل صحيح';
-                  } else if (value.length < 5) {
-                    return 'برجاء كتابه كلمة المرور بشكل صحيح';
-                  }
-                },
-
-              ),
-            ],
-          )),
-          SizedBox(
-            height: 20
-          ),
+                children: [
+                  InputFieldRegist(
+                    onChanged: (value) {
+                      name = value;
+                    },
+                    hint: "ادخل اسمك",
+                    label: " الاسم ",
+                    scure: false,
+                    controller: widget.nameController,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'برجاءادخال الاسم';
+                      } else if (value.length < 5) {
+                        return 'برجاء كتابه الاسم بشكل صحيح';
+                      }
+                    },
+                  ),
+                  InputFieldRegist(
+                    onChanged: (value) {
+                      email = value;
+                    },
+                    hint: "ادخل البريد الالكتروني",
+                    label: "البريد الالكتروني ",
+                    scure: false,
+                    controller: widget.emailController,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                      } else if (value.length < 5) {
+                        return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                      }
+                    },
+                  ),
+                  InputFieldRegist(
+                    onChanged: (value) {
+                      password = value;
+                    },
+                    hint: "ادخل كلمة مرور",
+                    label: "كلمة المرور ",
+                    scure: true,
+                    controller: widget.passwordController,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'برجاء كتابه كلمة المرور بشكل صحيح';
+                      } else if (value.length < 5) {
+                        return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                      }
+                    },
+                  ),
+                  InputFieldRegist(
+                    onChanged: (value) {
+                      password = value;
+                    },
+                    hint: "أكد كلمة مرورك",
+                    label: "تأكيد كلمة المرور ",
+                    scure: true,
+                    controller: widget.passwordController,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'برجاء كتابه كلمة المرور بشكل صحيح';
+                      } else if (value.length < 5) {
+                        return 'برجاء كتابه كلمة المرور بشكل صحيح';
+                      }
+                    },
+                  ),
+                ],
+              )),
+          SizedBox(height: 20),
           Buton('تسجيل', onTap: () {
-          validateForm();
+            validateForm();
           }),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Textbuton('سجل دخول', onTap: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LogInScreen()));}),
+              Textbuton('سجل دخول', onTap: () async {
+
+
+                setState(() {
+                  modal_progress_hud = true;
+                });
+                try {
+                  final newuser = await _auth.createUserWithEmailAndPassword(
+                      email: email, password: password);
+                  if (newuser.toString().isNotEmpty) {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LogInScreen()));
+                  }
+                  setState(() {
+                    modal_progress_hud = false;
+                  });
+                } catch (e) {
+                  print(e);
+                }
+              },
+
+
+              ),
               Text(
                 'هل لديك حساب بالفعل ؟',
                 style: hintStyle,
