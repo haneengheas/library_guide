@@ -55,17 +55,13 @@ late String name;
                     return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
                   }
                 },
-                  onChanged: (value) {
-                    name = value;
-                  },
+
               ),
               SizedBox(
                 height: 20,
               ),
               InputFieldRegist(
-                onChanged: (value) {
-                  name = value;
-                },
+
                 hint: 'ادخل كلمة المرور الجديد',
                 label: 'كلمة المرور الجديد',
                 scure: false,
@@ -82,9 +78,7 @@ late String name;
                 height: 20,
               ),
               InputFieldRegist(
-                onChanged: (value) {
-                  name = value;
-                },
+      
                 hint: ' تاكيد كلمة المرورالجديد',
                 label: ' تاكيد كلمة المرورالجديد',
                 scure: false,

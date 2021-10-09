@@ -64,14 +64,13 @@ class _SignInScreenState extends State<SignInScreen> {
               child: Column(
                 children: [
                   InputFieldRegist(
-                    onChanged: (value) {
-                      name = value;
-                    },
+
                     hint: "ادخل اسمك",
                     label: " الاسم ",
                     scure: false,
                     controller: widget.nameController,
                     validator: (value) {
+                      name = value;
                       if (value!.isEmpty) {
                         return 'برجاءادخال الاسم';
                       } else if (value.length < 5) {
@@ -80,14 +79,13 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                   ),
                   InputFieldRegist(
-                    onChanged: (value) {
-                      email = value;
-                    },
+
                     hint: "ادخل البريد الالكتروني",
                     label: "البريد الالكتروني ",
                     scure: false,
                     controller: widget.emailController,
                     validator: (value) {
+                      email = value;
                       if (value!.isEmpty) {
                         return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
                       } else if (value.length < 5) {
@@ -96,14 +94,13 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                   ),
                   InputFieldRegist(
-                    onChanged: (value) {
-                      password = value;
-                    },
+
                     hint: "ادخل كلمة مرور",
                     label: "كلمة المرور ",
                     scure: true,
                     controller: widget.passwordController,
                     validator: (value) {
+                      password = value;
                       if (value!.isEmpty) {
                         return 'برجاء كتابه كلمة المرور بشكل صحيح';
                       } else if (value.length < 5) {
@@ -112,14 +109,13 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                   ),
                   InputFieldRegist(
-                    onChanged: (value) {
-                      password = value;
-                    },
+
                     hint: "أكد كلمة مرورك",
                     label: "تأكيد كلمة المرور ",
                     scure: true,
                     controller: widget.passwordController,
                     validator: (value) {
+
                       if (value!.isEmpty) {
                         return 'برجاء كتابه كلمة المرور بشكل صحيح';
                       } else if (value.length < 5) {
@@ -145,7 +141,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 try {
                   final newuser = await _auth.createUserWithEmailAndPassword(
                       email: email, password: password);
-                  if (newuser.toString().isNotEmpty) {
+                  if (newuser!=null) {
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => LogInScreen()));
                   }

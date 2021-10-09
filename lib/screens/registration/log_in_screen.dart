@@ -63,14 +63,13 @@ class _LogInScreenState extends State<LogInScreen> {
               child: Column(
                 children: [
                   InputFieldRegist(
-                    onChanged: (value) {
-                      email = value;
-                    },
+
                     hint: 'ادخل البريد الالكتروني',
                     label: 'البريد الالكتروني',
                     scure: false,
                     controller: widget.emailController,
                     validator: (value) {
+                      email = value;
                       if (value!.isEmpty) {
                         return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
                       } else if (value.length < 5) {
@@ -79,14 +78,13 @@ class _LogInScreenState extends State<LogInScreen> {
                     },
                   ),
                   InputFieldRegist(
-                    onChanged: (value) {
-                      password = value;
-                    },
+
                     hint: 'ادخل كلمة المرور',
                     label: 'كلمة المرور',
                     scure: true,
                     controller: widget.passwordController,
                     validator: (value) {
+                      password = value;
                       if (value!.isEmpty) {
                         return 'برجاء كتابه كلمة المرور بشكل صحيح';
                       } else if (value.length < 5) {
@@ -133,18 +131,16 @@ class _LogInScreenState extends State<LogInScreen> {
             ],
           ),
           Buton("تسجيل دخول", onTap: () async {
-            validateForm();
+
 
 
             setState(() {
               modal_progress_hud = true;
             });
             try {
-              final userLog = await _auth.signInWithEmailAndPassword(
-                  email: email, password: password);
-              if (userLog.toString().isNotEmpty) {
-                  Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => Category()));
+              final userLog = await _auth.signInWithEmailAndPassword(email: email, password: password);
+              if (userLog!= null) {
+                validateForm();
               }
               setState(() {
                 modal_progress_hud = false;
@@ -152,17 +148,6 @@ class _LogInScreenState extends State<LogInScreen> {
             } catch (e) {
               print(e);
             }
-
-
-
-            // if(widget.emailController.text=='1'){
-
-            // }
-            // else{
-            //   Navigator.pushReplacement(
-            //       context, MaterialPageRoute(builder: (context) => NavigationScreen()));
-            // }
-
             print('00');
           }),
         ],
