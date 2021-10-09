@@ -34,6 +34,7 @@ class _EditProfileState extends State<EditProfile> {
             label: 'كلمة المرور القديم',
             scure: false,
             controller: widget.passwordController,
+            onChanged: (){},
           ),
           SizedBox(
             height: 20,
@@ -43,6 +44,7 @@ class _EditProfileState extends State<EditProfile> {
             label: 'كلمة المرور الجديد',
             scure: false,
             controller: widget.passwordController,
+            onChanged: () {},
 
           ),
           SizedBox(
@@ -53,6 +55,7 @@ class _EditProfileState extends State<EditProfile> {
             label: ' تاكيد كلمة المرورالجديد',
             scure: false,
             controller: widget.passwordController,
+            onChanged: () {},
 
           ),
           SizedBox(

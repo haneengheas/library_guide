@@ -6,7 +6,6 @@ import 'package:library_guide/screens/admin/category_screen/category_item.dart';
 import 'package:library_guide/screens/admin/category_screen/custom_appBar.dart';
 
 class Category extends StatefulWidget {
-  const Category({Key? key}) : super(key: key);
 
   @override
   _CategoryState createState() => _CategoryState();
