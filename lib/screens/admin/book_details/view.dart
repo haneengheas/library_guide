@@ -79,7 +79,7 @@ class _BookDetailsState extends State<BookDetails> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: purple,
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> Add_Comment()));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> AddComment()));
         },
         child: Icon(widget.icon),
       ),

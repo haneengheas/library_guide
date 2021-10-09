@@ -32,7 +32,7 @@ class HomePageScren extends StatelessWidget {
           height: 10,
         ),
         SizedBox(
-          height: sizeFromHeight(context, 1.3),
+          height: sizeFromHeight(context, 1.4),
           child: ListView(
             children: [
               Column(

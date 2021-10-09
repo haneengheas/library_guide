@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/widgets/button/flatbuton.dart';
 
-class Add_Comment extends StatelessWidget {
+class AddComment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

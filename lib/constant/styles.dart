@@ -32,9 +32,7 @@ TextStyle buttonTextStyle = GoogleFonts.tajawal(
 double sizeFromHeight(BuildContext context, double fraction,
     {bool hasAppBar = true}) {
   final screenHeight = MediaQuery.of(context).size.height;
-  fraction = (hasAppBar
-          ? (screenHeight -
-              AppBar().preferredSize.height -
+  fraction = (hasAppBar ? (screenHeight - AppBar().preferredSize.height -
               MediaQuery.of(context).padding.top)
           : screenHeight) /
       fraction;

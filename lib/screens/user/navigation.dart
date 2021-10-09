@@ -26,7 +26,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
         backgroundColor: white2,
          unselectedItemColor: gray,
         selectedItemColor: purple,
-       iconSize: 40,
+       iconSize: 35,
         type: BottomNavigationBarType.fixed,
         currentIndex: pageindex,
           onTap: (value){

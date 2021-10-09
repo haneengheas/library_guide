@@ -12,6 +12,16 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  validateForm() {
+    if (_formKey.currentState!.validate()) {
+      print('login');
+    } else {
+      return;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,38 +39,57 @@ class _EditProfileState extends State<EditProfile> {
           SizedBox(
             height: 60,
           ),
-          InputFieldRegist(
-            hint: 'ادخل كلمةالمرورالقديم',
-            label: 'كلمة المرور القديم',
-            scure: false,
-            controller: widget.passwordController,
-            onChanged: (){},
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          InputFieldRegist(
-            hint: 'ادخل كلمة المرور الجديد',
-            label: 'كلمة المرور الجديد',
-            scure: false,
-            controller: widget.passwordController,
-            onChanged: () {},
-
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          InputFieldRegist(
-            hint: ' تاكيد كلمة المرورالجديد',
-            label: ' تاكيد كلمة المرورالجديد',
-            scure: false,
-            controller: widget.passwordController,
-            onChanged: () {},
-
-          ),
-          SizedBox(
-          height: 80
-          ),
+          Form(
+              child: Column(
+            children: [
+              InputFieldRegist(
+                hint: 'ادخل كلمةالمرورالقديم',
+                label: 'كلمة المرور القديم',
+                scure: false,
+                controller: widget.passwordController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                  } else if (value.length < 5) {
+                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                  }
+                },
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              InputFieldRegist(
+                hint: 'ادخل كلمة المرور الجديد',
+                label: 'كلمة المرور الجديد',
+                scure: false,
+                controller: widget.passwordController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                  } else if (value.length < 5) {
+                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                  }
+                },
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              InputFieldRegist(
+                hint: ' تاكيد كلمة المرورالجديد',
+                label: ' تاكيد كلمة المرورالجديد',
+                scure: false,
+                controller: widget.passwordController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                  } else if (value.length < 5) {
+                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                  }
+                },
+              ),
+            ],
+          )),
+          SizedBox(height: 80),
           Buton(
             "تعديل",
             onTap: () {},
