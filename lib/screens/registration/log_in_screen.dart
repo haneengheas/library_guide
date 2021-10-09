@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
-import 'package:library_guide/screens/admin/category_screen/view.dart';
 import 'package:library_guide/screens/registration/password_recovery.dart';
 import 'package:library_guide/screens/registration/sign_in_screen.dart';
 import 'package:library_guide/screens/user/navigation.dart';
@@ -24,6 +23,8 @@ class _LogInScreenState extends State<LogInScreen> {
     print('aa');
     if (_formKey.currentState!.validate()) {
       print('login');
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>NavigationScreen()));
+
     } else {
       return;
     }
@@ -75,9 +76,9 @@ class _LogInScreenState extends State<LogInScreen> {
                controller: widget.passwordController,
                validator: (value) {
                  if (value!.isEmpty) {
-                   return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                   return 'برجاء كتابه كلمة المرور بشكل صحيح';
                  } else if (value.length < 5) {
-                   return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                   return 'يجب ان نكون كلمة المرور تحتوي علي اكثر من خمس ارقام';
                  }
                },
 
@@ -121,7 +122,6 @@ class _LogInScreenState extends State<LogInScreen> {
 
           Buton("تسجيل دخول", onTap:  () {
             validateForm();
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>NavigationScreen()));
             // if(widget.emailController.text=='1'){
             //   Navigator.pushReplacement(
             //       context, MaterialPageRoute(builder: (context) => Category()));

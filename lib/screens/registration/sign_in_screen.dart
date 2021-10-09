@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:library_guide/constant/styles.dart';
 import 'package:library_guide/screens/admin/category_screen/view.dart';
@@ -17,6 +16,17 @@ class SignInScreen extends StatefulWidget {
   _SignInScreenState createState() => _SignInScreenState();
 }
 class _SignInScreenState extends State<SignInScreen> {
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  validateForm() {
+    print('aa');
+    if (_formKey.currentState!.validate()) {
+      print('login');
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> Category()));
+
+    } else {
+      return;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,68 +48,73 @@ class _SignInScreenState extends State<SignInScreen> {
           SizedBox(
             height: 15,
           ),
-          InputFieldRegist(
-            hint: "ادخل اسمك",
-            label: " الاسم ",
-            scure: false,
-           controller: widget.nameController,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-              } else if (value.length < 5) {
-                return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-              }
-            },
+          Form(
+           key: _formKey,
+              child: Column(
+            children: [
+              InputFieldRegist(
+                hint: "ادخل اسمك",
+                label: " الاسم ",
+                scure: false,
+                controller: widget.nameController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'برجاءادخال الاسم';
+                  } else if (value.length < 5) {
+                    return 'برجاء كتابه الاسم بشكل صحيح';
+                  }
+                },
 
-          ),
-          InputFieldRegist(
-            hint: "ادخل البريد الالكتروني",
-            label: "البريد الالكتروني ",
-            scure: false,
-            controller: widget.emailController,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-              } else if (value.length < 5) {
-                return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-              }
-            },
-          ),
+              ),
+              InputFieldRegist(
+                hint: "ادخل البريد الالكتروني",
+                label: "البريد الالكتروني ",
+                scure: false,
+                controller: widget.emailController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                  } else if (value.length < 5) {
+                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                  }
+                },
+              ),
 
-          InputFieldRegist(
-            hint: "ادخل كلمة مرور",
-            label: "كلمة المرور ",
-            scure: true,
-            controller: widget.passwordController,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-              } else if (value.length < 5) {
-                return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-              }
-            },
-          ),
+              InputFieldRegist(
+                hint: "ادخل كلمة مرور",
+                label: "كلمة المرور ",
+                scure: true,
+                controller: widget.passwordController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'برجاء كتابه كلمة المرور بشكل صحيح';
+                  } else if (value.length < 5) {
+                    return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
+                  }
+                },
+              ),
 
-          InputFieldRegist(
-            hint: "أكد كلمة مرورك",
-            label: "تأكيد كلمة المرور ",
-            scure: true,
-            controller: widget.passwordController,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-              } else if (value.length < 5) {
-                return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
-              }
-            },
+              InputFieldRegist(
+                hint: "أكد كلمة مرورك",
+                label: "تأكيد كلمة المرور ",
+                scure: true,
+                controller: widget.passwordController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'برجاء كتابه كلمة المرور بشكل صحيح';
+                  } else if (value.length < 5) {
+                    return 'برجاء كتابه كلمة المرور بشكل صحيح';
+                  }
+                },
 
-          ),
+              ),
+            ],
+          )),
           SizedBox(
             height: 20
           ),
           Buton('تسجيل', onTap: () {
-            Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => Category()));
+          validateForm();
           }),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
