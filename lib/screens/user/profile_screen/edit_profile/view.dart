@@ -40,6 +40,7 @@ class _EditProfileState extends State<EditProfile> {
             height: 60,
           ),
           Form(
+            key: _formKey,
               child: Column(
             children: [
               InputFieldRegist(
@@ -92,7 +93,9 @@ class _EditProfileState extends State<EditProfile> {
           SizedBox(height: 80),
           Buton(
             "تعديل",
-            onTap: () {},
+            onTap: () {
+              validateForm();
+            },
           ),
         ],
       ),
