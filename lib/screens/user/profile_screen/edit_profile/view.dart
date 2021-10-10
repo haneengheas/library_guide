@@ -44,10 +44,10 @@ late String name;
               child: Column(
             children: [
               InputFieldRegist(
+                onSaved: (){},
                 hint: 'ادخل كلمةالمرورالقديم',
                 label: 'كلمة المرور القديم',
                 scure: false,
-                controller: widget.passwordController,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
@@ -61,11 +61,11 @@ late String name;
                 height: 20,
               ),
               InputFieldRegist(
+                onSaved: (){},
 
                 hint: 'ادخل كلمة المرور الجديد',
                 label: 'كلمة المرور الجديد',
                 scure: false,
-                controller: widget.passwordController,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'برجاء كتابه البريد الالكتروني بشكل صحيح';
@@ -78,11 +78,11 @@ late String name;
                 height: 20,
               ),
               InputFieldRegist(
+                onSaved: (){},
       
                 hint: ' تاكيد كلمة المرورالجديد',
                 label: ' تاكيد كلمة المرورالجديد',
                 scure: false,
-                controller: widget.passwordController,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'برجاء كتابه البريد الالكتروني بشكل صحيح';

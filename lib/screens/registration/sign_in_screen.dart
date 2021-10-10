@@ -68,7 +68,6 @@ class _SignInScreenState extends State<SignInScreen> {
                     hint: "ادخل اسمك",
                     label: " الاسم ",
                     scure: false,
-                    controller: widget.nameController,
                     validator: (value) {
                       name = value;
                       if (value!.isEmpty) {
@@ -76,14 +75,13 @@ class _SignInScreenState extends State<SignInScreen> {
                       } else if (value.length < 5) {
                         return 'برجاء كتابه الاسم بشكل صحيح';
                       }
-                    },
+                    }, onSaved: (){},
                   ),
                   InputFieldRegist(
-
+                    onSaved: (){},
                     hint: "ادخل البريد الالكتروني",
                     label: "البريد الالكتروني ",
                     scure: false,
-                    controller: widget.emailController,
                     validator: (value) {
                       email = value;
                       if (value!.isEmpty) {
@@ -94,11 +92,10 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                   ),
                   InputFieldRegist(
-
+                    onSaved: (){},
                     hint: "ادخل كلمة مرور",
                     label: "كلمة المرور ",
                     scure: true,
-                    controller: widget.passwordController,
                     validator: (value) {
                       password = value;
                       if (value!.isEmpty) {
@@ -109,11 +106,10 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                   ),
                   InputFieldRegist(
-
+                    onSaved: (){},
                     hint: "أكد كلمة مرورك",
                     label: "تأكيد كلمة المرور ",
                     scure: true,
-                    controller: widget.passwordController,
                     validator: (value) {
 
                       if (value!.isEmpty) {
